@@ -2,12 +2,12 @@
 geometry_msgs/PoseStamped task_frame
 
 # 1 means that the robot will be compliant in the corresponding axis of the task frame
-bool selection_vector_x
-bool selection_vector_y
-bool selection_vector_z
-bool selection_vector_rx
-bool selection_vector_ry
-bool selection_vector_rz
+bool selection_vector_x 0 
+bool selection_vector_y 0
+bool selection_vector_z 0
+bool selection_vector_rx 0
+bool selection_vector_ry 0
+bool selection_vector_rz 0
 
 # The forces/torques the robot will apply to its environment. For geometric interpretation, please
 # see parameter `type`
@@ -19,12 +19,16 @@ geometry_msgs/WrenchStamped wrench
 # 2: The force frame is not transformed.
 # 3: The force frame is transformed in a way such that its x-axis is the projection of the robot tcp
 #     velocity vector onto the x-y plane of the force frame.
-uint8 type
+uint8 type 2
+# Type constants:
+uint8 TCP_TO_ORIGIN=1
+uint8 NO_TRANSFORM=2
+uint8 TCP_VELOCITY_TO_X_Y=3
 
 # For compliant axes, these values are the maximum allowed tcp speed along/about the axis.
 # For non-compliant axes, these values are the maximum allowed deviation along/about an axis
 # between the actual tcp position and the one set by the program.
-geometry_msgs/TwistStamped limits
+float32[6] limits [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
 
 # Force mode damping factor. Sets the damping parameter in force mode. In range [0;1], default value is 0.025
 # A value of 1 is full damping, so the robot will decelerate quickly if no force is present. A value of 0
