@@ -11,7 +11,7 @@ bool selection_vector_rz 0
 
 # The forces/torques the robot will apply to its environment. For geometric interpretation, please
 # see parameter `type`
-geometry_msgs/WrenchStamped wrench
+geometry_msgs/Wrench wrench
 
 # An integer [1;3] specifying how the robot interprets the force frame
 # 1: The force frame is transformed in a way such that its y-axis is aligned with a vector pointing
