@@ -25,10 +25,13 @@ uint8 TCP_TO_ORIGIN=1
 uint8 NO_TRANSFORM=2
 uint8 TCP_VELOCITY_TO_X_Y=3
 
-# For compliant axes, these values are the maximum allowed tcp speed along/about the axis.
+# Maximum allowed tcp speed (relative to the task frame).
+# PLEASE NOTE: This is only relevant for axes marked as compliant in the selection_vector
+geometry_msgs/Twist speed_limits
+
 # For non-compliant axes, these values are the maximum allowed deviation along/about an axis
 # between the actual tcp position and the one set by the program.
-float32[6] limits [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+float32[6] deviation_limits [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
 
 # Force mode damping factor. Sets the damping parameter in force mode. In range [0;1], default value is 0.025
 # A value of 1 is full damping, so the robot will decelerate quickly if no force is present. A value of 0
