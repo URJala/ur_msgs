@@ -2,8 +2,8 @@
 Changelog for package ur_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.0 (2024-12-02)
+------------------
 * Added service to set force mode (`#26 <https://github.com/ros-industrial/ur_msgs/issues/26>`_)
 * Contributors: URJala
 
